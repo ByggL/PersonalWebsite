@@ -6,3 +6,8 @@ export const SITE_DESCRIPTION = "My all-in-one personal website, resume and port
 
 export const NAME = "Samuel Léobon";
 export const PSEUDO = "Big L";
+
+export const TODAY_DATE = new Date();
+export const TODAY_DAY = TODAY_DATE.getDate();
+export const TODAY_YEAR = TODAY_DATE.getFullYear();
+export const TODAY_MONTH = TODAY_DATE.getMonth();
