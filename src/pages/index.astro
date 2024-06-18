@@ -2,6 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import WideBlock from '../components/WideBlock.astro';
+import HeaderLink from '../components/HeaderLink.astro';
+import SmallBlock from '../components/SmallBlock.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 let useRealName: boolean = true;
@@ -12,10 +14,10 @@ let useRealName: boolean = true;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-black">
-		<h1 class="text-white text-center text-[400px] m-0 font-mono p-0 leading-[300px] mt-5">SAMUEL</h1>
+	<body class="text-white font-mono bg-[248px]" style="background-image: url(/public/skska.png); scrollbar-width: thin; scrollbar-color: #990000">
+		<h1 class="text-center text-[400px] m-0 p-0 leading-[300px] mt-5">SAMUEL</h1>
 		<img src="/SL2_black.svg" alt="SL_black" class="fixed top-[25%] h-[50%] left-[50%] -translate-x-[50%] z-5">
-		<h1 class="text-white text-center text-[400px] m-0 font-mono p-0 leading-[300px] mt-[220px]">LÉOBON</h1>
+		<h1 class="text-center text-[400px] m-0 p-0 leading-[300px] mt-[220px]">LÉOBON</h1>
 		<main class="mt-[120px]">
 			<WideBlock title="About Me">
 				<p>
@@ -25,14 +27,89 @@ let useRealName: boolean = true;
 			</WideBlock>
 			<WideBlock title="Projects">
 				<div class="flex flex-row">
-					<div class="ml-auto mr-auto pr-10">
-						<h3>Programming</h3>
+					<div class="ml-auto mr-auto pr-10 text-center">
+						<h3 class="text-xl">Programming</h3>
+						<ul class="inline-block text-left">
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+						</ul>
 					</div>
-					<div class="ml-auto mr-auto pl-10">
-						<h3>Personal</h3>
+					<div class="ml-auto mr-auto pl-10 text-center">
+						<h3 class="text-xl">Personal</h3>
+						<ul class="inline-block text-left">
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+							<li>Placeholder text</li>
+						</ul>
 					</div>
 				</div>
+				<div class="text-center mt-5 underline text-bold">
+					<HeaderLink href="/blog">See More</HeaderLink>
+				</div>
 			</WideBlock>
+			<WideBlock title='Professional Informations'>
+				<h2 class="text-center text-xl">Professional Experience</h2>
+				<p class="font-bold mt-5">JavaScript Developer Intern | 2024 - 2026</p>
+				<p class="italic">b.workshop Nantes</p>
+				<!-- <ul class="list-disc ml-5">
+					<li>Gestion des besoins locataires</li>
+					<li>Assistance téléphonique auprès de demandeurs logements</li>
+				</ul> -->
+				<br>
+
+				<p class="font-bold">Reception and Administrative Officer | August 2023</p>
+				<p class="italic">Angers Loire Habitat</p>
+				<ul class="list-disc ml-5">
+					<li>Tenant needs management</li>
+					<li>Hotline for housing applicants</li>
+				</ul> <br>
+
+				<p class="font-bold">Technical and Customer Relations Advisor | June-August 2022</p>
+				<p class="italic">Verisure Angers</p>
+				<ul class="list-disc ml-5">
+					<li>Supporting and resolving customer needs</li>
+					<li>Directing customers to the right services</li>
+					<li>Administrative handling of customer needs</li>
+				</ul> <br><br>
+
+				<!-- ===================================================================== -->
+
+				<h2 class="text-center text-xl">Skills</h2>
+				<p><b>OOP :</b> C++, C#, Java</p>
+				<p><b>WebDev :</b> HTML/CSS, Javascript, PHP, React, Svelte, Astro</p>
+				<p><b>Database :</b> SQL, PostgreSQL, Firebase</p>
+				<p><b>Others :</b> Python, Git/GitHub</p>
+				<br><br>
+
+				<!-- ===================================================================== -->
+
+				<h2 class="text-center text-xl">Formations</h2>
+
+				<p class="font-bold mt-5">Computer Science degree | 2021 - 2024</p>
+				<p>Year 1 in Mathematics-Computer Science, Year 2-3 in Computer Science</p>
+				<p class="italic">Université d'Angers</p>
+				<br>
+
+				<p class="font-bold mt-5">Baccalauréat Général | 2021</p>
+				<p>Specialized in Mathematics and Digital and Computer Science</p>
+				<p class="italic">Institution Mongazon</p>
+				<br>
+			</WideBlock>
+			<div class="flex flex-row ml-[25%] mr-[25%] justify-center">
+				<SmallBlock title="Languages">
+					<ul>
+						<li>French (native)</li>
+						<li>English (bilingual)</li>
+					</ul>
+				</SmallBlock>
+				<SmallBlock title="Passions"></SmallBlock>
+				<SmallBlock title="Links"></SmallBlock>
+			</div>
 		</main>
 		<Footer />
 	</body>

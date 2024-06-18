@@ -7,8 +7,15 @@ export default {
       current: 'currentColor',
       'white': '#eeeeee',
       'black': '#010101',
-      'strongred': '#990000'
+      'strongred': '#990000',
+      'softred': '#990015',
     },
-  },
+    extend: {
+      backgroundImage: {
+        'static-black': "url('/public/static_black.gif')",
+        'starry': "url('/public/skska.png')",
+      }
+    },
 	plugins: [],
+  }
 }
