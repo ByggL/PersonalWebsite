@@ -3,7 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import WideBlock from '../components/WideBlock.astro';
 import HeaderLink from '../components/HeaderLink.astro';
-import SmallBlock from '../components/SmallBlock.astro'
+import SmallBlock from '../components/SmallBlock.astro';
+import Body from '../components/Body.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 let useRealName: boolean = true;
@@ -14,7 +15,7 @@ let useRealName: boolean = true;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="text-white font-mono bg-[248px]" style="background-image: url(/public/skska.png); scrollbar-width: thin; scrollbar-color: #990000">
+	<Body>
 		<h1 class="text-center text-[400px] m-0 p-0 leading-[300px] mt-5">SAMUEL</h1>
 		<img src="/SL2_black.svg" alt="SL_black" class="fixed top-[25%] h-[50%] left-[50%] -translate-x-[50%] z-5">
 		<h1 class="text-center text-[400px] m-0 p-0 leading-[300px] mt-[220px]">LÉOBON</h1>
@@ -49,7 +50,7 @@ let useRealName: boolean = true;
 					</div>
 				</div>
 				<div class="text-center mt-5 underline text-bold">
-					<HeaderLink href="/blog">See More</HeaderLink>
+					<HeaderLink href="/blog"><p class="text-xl">See More</p></HeaderLink>
 				</div>
 			</WideBlock>
 			<WideBlock title='Professional Informations'>
@@ -102,15 +103,21 @@ let useRealName: boolean = true;
 			</WideBlock>
 			<div class="flex flex-row ml-[25%] mr-[25%] justify-center">
 				<SmallBlock title="Languages">
-					<ul>
+					<ul class="text-center">
 						<li>French (native)</li>
 						<li>English (bilingual)</li>
 					</ul>
 				</SmallBlock>
-				<SmallBlock title="Passions"></SmallBlock>
+				<SmallBlock title="Passions">
+					<ul class="text-center">
+						<li>Worldbuilding</li>
+						<li>Tabletop RPGs</li>
+						<li>Video Game Development</li>
+					</ul>
+				</SmallBlock>
 				<SmallBlock title="Links"></SmallBlock>
 			</div>
 		</main>
 		<Footer />
-	</body>
+	</Body>
 </html>

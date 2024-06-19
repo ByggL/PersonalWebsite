@@ -2,6 +2,8 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import HomeButton from '../components/HomeButton.astro';
+import Body from '../components/Body.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -14,11 +16,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
 			.hero-image {
 				width: 100%;
 			}
@@ -35,15 +32,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				padding: 1em;
 				color: rgb(var(--gray-dark));
 			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
@@ -54,9 +42,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</style>
 	</head>
 
-	<body>
-		<Header />
-		<main>
+	<Body>
+		<HomeButton/>
+		<main class="bg-softred border-4 border-white border-r-10 w-1/2 p-12 font-mono text-white mt-20 ml-auto mr-auto z-10 relative shadow-[0_0_50px_0px_#990020]">
 			<article>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
@@ -73,7 +61,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1 class="mb-5 text-center leading-10">{title}</h1>
 						<hr />
 					</div>
 					<slot />
@@ -81,5 +69,5 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
-	</body>
+	</Body>
 </html>
