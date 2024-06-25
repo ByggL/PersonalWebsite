@@ -9,13 +9,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
-const programmingPosts = (await getCollection('programming')).sort(
+const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-const personalPosts = (await getCollection('personal')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-); 
 ---
 
 <!doctype html>
@@ -28,16 +25,16 @@ const personalPosts = (await getCollection('personal')).sort(
 		<h1 class="text-center text-9xl m-0 p-0 leading-[300px] mt-5">MY PROJECTS</h1>
 		<main class="mt-[120px] flex flex-row justify-center">
 			<section>
-				<h2 class="text-center">Programming Projects</h2>
+				<!-- <h2 class="text-center">Programming Projects</h2> -->
 				<div class="text-center">
 					{
-						programmingPosts.map((post) => (
+						posts.map((post) => (
 							<div class="flex justify-center mt-10 pl-0 ml-0">
 								<a href={`/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" class="border-4 border-white border-r-10 shadow-[0_0_50px_0px_#990020]" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										{post.data.pubDate}
+										<FormattedDate date={post.data.pubDate}/>
 									</p>
 								</a>
 							</div>
@@ -45,7 +42,7 @@ const personalPosts = (await getCollection('personal')).sort(
 					}
 				</div>
 			</section>
-			<section>
+			<!-- <section>
 				<h2 class="text-center ml-[40px]">Personal Projects</h2>
 				<ul class="text-center">
 					{
@@ -62,7 +59,7 @@ const personalPosts = (await getCollection('personal')).sort(
 						))
 					}
 				</ul>
-			</section>
+			</section> -->
 		</main>
 		<Footer />
 	</Body>
