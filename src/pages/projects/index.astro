@@ -23,16 +23,21 @@ const posts = (await getCollection('blog')).sort(
 	<Body>
 		<HomeButton/>
 		<h1 class="text-center text-9xl m-0 p-0 leading-[300px] mt-5">MY PROJECTS</h1>
-		<main class="mt-[120px] flex flex-row justify-center">
-			<section>
+		<main class="mt-[120px] justify-center">
+			<section class="flex flex-row justify-between w-[70%] ml-auto mr-auto">
 				<!-- <h2 class="text-center">Programming Projects</h2> -->
-				<div class="text-center">
+				<div class="text-center  pl-5">
 					{
 						posts.map((post) => (
-							<div class="flex justify-center mt-10 pl-0 ml-0">
-								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" class="border-4 border-white border-r-10 shadow-[0_0_50px_0px_#990020]" />
+							<div class="flex justify-center mt-10 mb-10 float-left ml-5 mr-5">
+								<a href={`/projects/${post.slug}/`}>
+									<img width={600} height={360} src={post.data.heroImage} alt="" class="border-4 border-white border-r-10 shadow-[0_0_50px_0px_#990020]" />
 									<h4 class="title">{post.data.title}</h4>
+									{
+										post.data.category && (
+										<h3 class="text-center text-xl italic">{post.data.category}</h3>
+										)
+									}
 									<p class="date">
 										<FormattedDate date={post.data.pubDate}/>
 									</p>
